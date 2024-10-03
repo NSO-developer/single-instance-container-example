@@ -1,0 +1,44 @@
+networks:
+     NSO-1-net: {}
+services:
+     NSO-1:
+       image: mod-nso-prod:$VER
+       container_name: nso-prod
+       profiles:
+             - prod
+       environment:
+             - EXTRA_ARGS=--with-package-reload
+             - ADMIN_USERNAME=admin
+             - ADMIN_PASSWORD=admin
+       networks:
+             - NSO-1-net
+       ports:
+             - "2024:2024"
+             - "8888:8888"
+       volumes:
+             - type: bind
+               source: './NSO-vol'
+               target: '/nso'
+             - type: bind
+               source: './NSO-log-vol'
+               target: '/log'
+       healthcheck:
+            test: ncs_cmd -c "wait-start 2"
+            interval: 5s
+            retries: 5
+            start_period: 10s
+            timeout: 10s
+     BUILD-NSO-PKGS:
+            image: mod-nso-dev:$VER
+            container_name: nso-dev
+            network_mode: none
+            profiles:
+                - dev
+            volumes:
+                - type: bind
+                  source: './NSO-vol'
+                  target: '/nso'
+                - type: bind
+                  source: './NSO-log-vol'
+                  target: '/log'
+
