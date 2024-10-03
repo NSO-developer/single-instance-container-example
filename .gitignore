@@ -8,3 +8,4 @@ NSO-log-vol/*
 NSO-vol/*
 !NSO-vol/.gitkeep
 
+*.swp
