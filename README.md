@@ -2,7 +2,7 @@
 This is a example for running NSO in Official Container with recommended best practices. This example act as the base framwork for the HA, HARAFT and the LSA Containerized NSO example. At the same time, we will also use this as base framwork for NID migration to Containerized NSO. 
 
 
-## Useage
+## Usage
 The Makefile have the following target  
 build:  
 Build the container enviorment  
@@ -40,6 +40,26 @@ start Cisco style CLI
 
 cli-j:  
 START Juniper style CLI . 
+
+
+### Example Usage
+Startup NSO with "docker run"
+```
+make clean build start
+```
+Stop NSO with "docker stop"
+```
+make stop clean
+```
+
+Startup NSO with docker-compose
+```
+make clean build start_compose
+```
+Stop NSO with docker-compose
+```
+make stop_compose clean
+```
 
 
 ## Use Case
