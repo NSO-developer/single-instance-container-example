@@ -1,5 +1,5 @@
 # Containerized NSO Example
-This is a example for running NSO in Official Container with recommended best practices
+This is a example for running NSO in Official Container with recommended best practices. This example act as the base framwork for the HA, HARAFT and the LSA Containerized NSO example. At the same time, we will also use this as base framwork for NID migration to Containerized NSO. 
 
 
 ## Useage
@@ -50,3 +50,22 @@ START Juniper style CLI .
 5. Start the container with "make start" or with docker composer "make start_compose"
 6. Build the packages in the development images "make compile_packages"
 7. Test the packages inside the production images "make cli-c" or Juniper CLI "make cli-j"
+
+## Copyright and License Notice
+``` 
+Copyright (c) 2024 Cisco and/or its affiliates.
+
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+
+               https://developer.cisco.com/docs/licenses
+
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
+``` 
+
