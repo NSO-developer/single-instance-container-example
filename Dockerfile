@@ -13,7 +13,7 @@ RUN pip install --upgrade pip && \
 #    rm -rf /var/cache/yum
  
 #Dnf install
-#RUN dnf -y update
+RUN dnf -y update
 #RUN dnf install -y <dependency> && \
 #    dnf clean all
 
